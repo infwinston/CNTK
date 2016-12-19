@@ -972,7 +972,8 @@
         return Create(shape, input, device, readOnly);
     }
 
-    public static Value CreateSequence<T>(NDShape shape, System.Collections.Generic.List<T> sequence,
+    public static Value CreateSequence<T>(NDShape shape,
+                                          System.Collections.Generic.List<T> sequence,
                                           bool seqStartFlag,
                                           DeviceDescriptor device,
                                           bool readOnly = false)
@@ -1070,18 +1071,18 @@
     }
 
     public static Value Create<T>(NDShape sampleShape,
-                                System.Collections.Generic.List<System.Collections.Generic.List<T>> sequences,
-                                DeviceDescriptor device,
-                                bool readOnly = false)
+                                  System.Collections.Generic.List<System.Collections.Generic.List<T>> sequences,
+                                  DeviceDescriptor device,
+                                  bool readOnly = false)
     {
         return Create<T>(sampleShape, sequences, new System.Collections.Generic.List<bool>(0), device, readOnly);
     }
 
     public static Value Create<T>(uint dimension,
-                                System.Collections.Generic.List<System.Collections.Generic.List<uint>> sequences,
-                                System.Collections.Generic.List<bool> sequenceStartFlags,
-                                DeviceDescriptor device,
-                                bool readOnly = false)
+                                  System.Collections.Generic.List<System.Collections.Generic.List<uint>> sequences,
+                                  System.Collections.Generic.List<bool> sequenceStartFlags,
+                                  DeviceDescriptor device,
+                                  bool readOnly = false)
     {
         var seqFlags = new BoolVector(sequenceStartFlags);
         if (typeof(T).Equals(typeof(float)))
@@ -1109,9 +1110,9 @@
     }
 
     public static Value Create<T>(uint dimension,
-                                System.Collections.Generic.List<System.Collections.Generic.List<uint>> sequences,
-                                DeviceDescriptor device,
-                                bool readOnly = false)
+                                  System.Collections.Generic.List<System.Collections.Generic.List<uint>> sequences,
+                                  DeviceDescriptor device,
+                                  bool readOnly = false)
     {
         return Create<T>(dimension, sequences, new System.Collections.Generic.List<bool>(0), device, readOnly);
     }
