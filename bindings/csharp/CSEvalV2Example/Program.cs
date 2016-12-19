@@ -101,7 +101,7 @@ namespace CSEvalV2Example
             outputData = new List<List<float>>();
             outputVal = outputDataMap[outputVar];
             outputVal.CopyTo(outputVar.Shape, outputData);
-            
+
             // Output result
             Console.WriteLine("The number of sequences in the batch: " + outputData.Count);
             int seqNo = 0;
@@ -261,6 +261,11 @@ namespace CSEvalV2Example
             //EvaluationWithOneHot(DeviceDescriptor.GPUDevice(1));
 
             Console.WriteLine("======== Evaluation completes. ========");
+
+            List<NDArrayView> seq = new List<NDArrayView>();
+            NDArrayViewVector seqV = new NDArrayViewVector(seq);
+
+
         }
     }
 }
